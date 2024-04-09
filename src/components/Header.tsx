@@ -6,7 +6,7 @@ import { CommandItem } from './ui/command';
 
 export default function Header() {
     return (
-        <div className="flex justify-between gap-4 p-6 items-center">
+        <div className="flex justify-between gap-4 p-6 pb-12 items-center">
             <div className="w-24 h-9 sm:w-28 sm:h-10.5 md:w-32 md:h-11.9">
             <button>
             <Image
