@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import { Timer, User } from 'lucide-react';
-import { CommandItem } from './ui/command';
+import { Popover, PopoverTrigger } from './ui/popover';
+import { Button } from './ui/button';
 
 export default function Header() {
     return (
@@ -19,12 +20,20 @@ export default function Header() {
             </button>
             </div>
             <div className="flex gap-2">
-                <button>
-                <User size={32} className='bg-white p-1 border border-gray-300 shadow-lg rounded-xl' />
-                </button>
-                <button>
-                <Timer size={32} className='bg-white p-1 border border-gray-300 shadow-lg rounded-xl' />
-                </button>
+                <Popover>
+                    <PopoverTrigger>
+                        <Button variant="ghost" size="icon">
+                            <User size={32} className='bg-white p-1 border border-gray-300 shadow-lg rounded-xl' />
+                        </Button>
+                    </PopoverTrigger>
+                </Popover>
+                <Popover>
+                <PopoverTrigger>
+                        <Button variant="ghost" size="icon">
+                            <Timer size={32} className='bg-white p-1 border border-gray-300 shadow-lg rounded-xl' />
+                        </Button>
+                    </PopoverTrigger>
+                </Popover>
             </div>
         </div>
     );
