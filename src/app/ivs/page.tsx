@@ -1,9 +1,19 @@
 'use client';
 
-export default function Ivs() {
+import { CustomBreadcrumb } from "@/components/custom-breadcrumb";
+
+const breadcrumbItems = {
+    fatherLink: "/ivs",
+    fatherName: "Beds",
+    childName: "All Beds"
+}
+export default function page() {
     return (
-        <div>
-            Ivs
+        <>
+        <div className="flex p-4 md:p-4">
+          <CustomBreadcrumb items={breadcrumbItems} />
+          {/* <UserClient data={users} /> */}
         </div>
+      </>
     );
 }
