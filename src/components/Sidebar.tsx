@@ -10,6 +10,7 @@ import {
     CommandSeparator,
   } from "@/components/ui/command"
 import { Hospital, Bed, CalendarCheck, UserPlus, CalendarPlus, Radio, Bell, Settings, LogOut } from "lucide-react";
+import Link from "next/link";
 
 export default function Sidebar() {
     const menuItemsList = [
@@ -92,10 +93,13 @@ export default function Sidebar() {
                     {menuItemsList.map((menu: any, key: number) => (
                         <CommandGroup key={key} heading={menu.group}>
                             {menu.items.map((option: any, optionKey: number) =>
-                                <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
-                                    {option.icon}
-                                    {option.name}
-                                </CommandItem>)}
+                                <Link href={option.path} key={optionKey}>
+                                    <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
+                                        {option.icon}
+                                        {option.name}
+                                    </CommandItem>
+                                </Link>)
+                            }
                         </CommandGroup>
                     ))}
                 </CommandList>
@@ -108,10 +112,13 @@ export default function Sidebar() {
                     {settingsItemsList.map((menu: any, key: number) => (
                         <CommandGroup key={key}>
                             {menu.items.map((option: any, optionKey: number) =>
-                                <CommandItem key={optionKey} className="flex gap-2 cursor-pointer text-sm text-gray-600">
-                                    {option.icon}
-                                    {option.name}
-                                </CommandItem>)}
+                                <Link href={option.path} key={optionKey}>
+                                    <CommandItem key={optionKey} className="flex gap-2 cursor-pointer text-sm text-gray-600">
+                                        {option.icon}
+                                        {option.name}
+                                    </CommandItem>
+                                </Link>)
+                            }
                         </CommandGroup>
                     ))}
                 </CommandList>
