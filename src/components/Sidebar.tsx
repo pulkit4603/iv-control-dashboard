@@ -9,7 +9,7 @@ import {
     CommandList,
     CommandSeparator,
   } from "@/components/ui/command"
-import { Hospital, Bed, CalendarCheck, UserPlus, CalendarPlus, Radio } from "lucide-react";
+import { Hospital, Bed, CalendarCheck, UserPlus, CalendarPlus, Radio, Bell, Settings, LogOut } from "lucide-react";
 
 export default function Sidebar() {
     const menuItemsList = [
@@ -58,31 +58,65 @@ export default function Sidebar() {
                 }
             ]
         }
-    ]
+    ];
+    const settingsItemsList = [
+        {
+            group: "Settings",
+            items: [
+                {
+                    name: "Notifications",
+                    icon: <Bell size={20} strokeWidth={1}/>,
+                    path: "/notifications"
+                },
+                {
+                    name: "Settings",
+                    icon: <Settings size={20} strokeWidth={1}/>,
+                    path: "/settings"
+                },
+                {
+                    name: "Logout",
+                    icon: <LogOut size={20} strokeWidth={1}/>,
+                    path: "/logout"
+                }
+            ]
+        }
+    ];
 
-    return <div className="flex flex-col gap-4 w-[300px] min-w-[300px]: border-r min-h-screen p-4">
+    return <div className="fixed flex flex-col gap-4 w-[300px] min-w-[300px] p-4 min-h-screen">
         <div>
             <UserItem />
         </div>
         <div className="grow">
-        <Command style={{overflow: 'visible'}}>
-            <CommandList style={{overflow: 'visible'}}>
-                {menuItemsList.map((menu: any, key: number) => (
-                    <CommandGroup key={key} heading={menu.group}>
-                        {menu.items.map((option: any, optionKey: number) =>
-                            <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
-                                {option.icon}
-                                {option.name}
-                            </CommandItem>)}
-                    </CommandGroup>
-                ))}
-            </CommandList>
-        </Command>
-
+            <Command style={{overflow: 'visible'}}>
+                <CommandList style={{overflow: 'visible'}}>
+                    {menuItemsList.map((menu: any, key: number) => (
+                        <CommandGroup key={key} heading={menu.group}>
+                            {menu.items.map((option: any, optionKey: number) =>
+                                <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
+                                    {option.icon}
+                                    {option.name}
+                                </CommandItem>)}
+                        </CommandGroup>
+                    ))}
+                </CommandList>
+            </Command>
         </div>
-        <div>Notifications</div>
-        <div>Settings</div>
-        <div>Logout</div>
+
+        <div>
+            <Command style={{overflow: 'visible'}}>
+                <CommandList style={{overflow: 'visible'}}>
+                    {settingsItemsList.map((menu: any, key: number) => (
+                        <CommandGroup key={key}>
+                            {menu.items.map((option: any, optionKey: number) =>
+                                <CommandItem key={optionKey} className="flex gap-2 cursor-pointer text-sm text-gray-600">
+                                    {option.icon}
+                                    {option.name}
+                                </CommandItem>)}
+                        </CommandGroup>
+                    ))}
+                </CommandList>
+            </Command>
+        </div>
     </div>
 
 }
