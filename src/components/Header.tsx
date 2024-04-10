@@ -29,7 +29,7 @@ export default function Header() {
             <div className="flex gap-2">
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon" className='h-[2.3rem] w-[2.3rem] p-1 scale-100 bg-white border border-gray-100 shadow-xl rounded-2xl'>
+                        <Button variant="ghost" size="icon" className='h-[2.3rem] w-[2.3rem] p-1 scale-100 bg-white border border-gray-200 shadow-xl rounded-2xl'>
                             <User size={32} className='p-1' />
                         </Button>
                     </DropdownMenuTrigger>
@@ -45,7 +45,7 @@ export default function Header() {
                             </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
-                <Button variant="ghost" size="icon" onClick={() => router.push(pagePaths.activeIvsPage)} className='h-[2.3rem] w-[2.3rem] p-1 scale-100 bg-white border border-gray-100 shadow-xl rounded-2xl'>
+                <Button variant="ghost" size="icon" onClick={() => router.push(pagePaths.activeIvsPage)} className='h-[2.3rem] w-[2.3rem] p-1 scale-100 bg-white border border-gray-200 shadow-xl rounded-2xl'>
                     <Timer size={32} className='p-1' />
                 </Button>
             </div>
