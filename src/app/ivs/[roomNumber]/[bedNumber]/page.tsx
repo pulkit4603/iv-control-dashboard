@@ -28,7 +28,7 @@ export default function page({params,} : {params: {bedNumber: string, roomNumber
                 <div className="text-2xl">Patient Name: {bedData?.patientName}</div>
             </div>
 
-            <div className="flex items-start justify-start border border-black">
+            <div className="flex items-start justify-start border border-red">
                 <div className="w-48 h-48 p-6 border border-black">
                     <Image 
                         src="/patientPhoto.jpg"
