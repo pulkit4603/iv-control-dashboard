@@ -19,13 +19,13 @@ export const columns: ColumnDef<Bed>[] = [
           )
         },
         cell: ({ row }: { row: { original: Bed } }) => {
-          const bedNumber = row.original.bedNumber;
-          const roomNumber = row.original.roomNumber;
-          return (
-            <Link href={`/ivs/${roomNumber}/${bedNumber}`}>
-              {bedNumber}
-            </Link>
-          );
+            const bedNumber = row.original.bedNumber;
+            const roomNumber = row.original.roomNumber;
+            return (
+              <Link href={`/ivs/${roomNumber}/${bedNumber}`}>
+                {bedNumber}
+              </Link>
+            );
         }
       },
       {
