@@ -4,7 +4,7 @@ import {columns} from './columns';
 import { beds, rooms } from '@/constants/data';
 import { DataTable } from './data-table';
 import { CustomBreadcrumb } from "@/components/custom-breadcrumb";
-import { Input, Label } from '@/components/ui/input';
+import { Input } from '@/components/ui/input';
 
 const breadcrumbItems = {
     fatherLink: "/ivs",
