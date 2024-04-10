@@ -1,13 +1,11 @@
 'use client';
 
-
 import UserItem from "./UserItem";
 import {
     Command,
     CommandGroup,
     CommandItem,
     CommandList,
-    CommandSeparator,
   } from "@/components/ui/command"
 import { Hospital, Bed, CalendarCheck, UserPlus, CalendarPlus, Radio, Bell, Settings, LogOut } from "lucide-react";
 import Link from "next/link";
@@ -93,12 +91,12 @@ export default function Sidebar() {
                     {menuItemsList.map((menu: any, key: number) => (
                         <CommandGroup key={key} heading={menu.group}>
                             {menu.items.map((option: any, optionKey: number) =>
-                                <Link href={option.path} key={optionKey}>
-                                    <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
-                                        {option.icon}
-                                        {option.name}
-                                    </CommandItem>
-                                </Link>)
+                            <Link href={option.path} key={optionKey}>
+                                <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
+                                    {option.icon}
+                                    {option.name}
+                                </CommandItem>
+                            </Link>)
                             }
                         </CommandGroup>
                     ))}

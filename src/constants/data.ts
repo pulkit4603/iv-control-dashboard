@@ -55,4 +55,11 @@ export const beds: Bed[] = [
       status: "Active",
     },
   ];
-  
+
+export const pagePaths = {
+  homePage: '/',
+  activeIvsPage: '/ivs/active',
+  logoutPage: '/logout',
+  profilePage: '/profile',
+  settingsPage: '/settings',
+};
