@@ -17,6 +17,9 @@ export default function page({params,} : {params: {bedNumber: string, roomNumber
 
     return (
         <>
+            <div className="flex flex-col items-start justify-between p-4 md:p-4">
+                <CustomBreadcrumb items={breadcrumbItems} />
+            </div>
             <div className="flex flex-col items-start justify-start rounded-lg">
                 <div className="w-full min-w-full text-md p-4 text-lg border-b">
                     <p>CONTROL PAGE</p>
