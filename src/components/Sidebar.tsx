@@ -81,15 +81,15 @@ export default function Sidebar() {
         }
     ];
 
-    return <div className="fixed flex flex-col gap-4 w-[300px] min-w-[300px] p-4 min-h-screen">
+    return <div className="fixed flex flex-col gap-4 w-[300px] min-w-[300px] p-4 backdrop-brightness-105 bg-cover min-h-screen">
         <div>
             <UserItem />
         </div>
         <div className="grow">
-            <Command style={{overflow: 'visible'}}>
-                <CommandList style={{overflow: 'visible'}}>
+            <Command className="min-h-[20.4rem]">
+                <CommandList style={{overflow: 'visible'}} className="">
                     {menuItemsList.map((menu: any, key: number) => (
-                        <CommandGroup key={key} heading={menu.group}>
+                        <CommandGroup key={key} heading={menu.group} className="">
                             {menu.items.map((option: any, optionKey: number) =>
                             <Link href={option.path} key={optionKey}>
                                 <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">
@@ -105,7 +105,7 @@ export default function Sidebar() {
         </div>
 
         <div>
-            <Command style={{overflow: 'visible'}}>
+            <Command style={{overflow: 'visible'}} className="">
                 <CommandList style={{overflow: 'visible'}}>
                     {settingsItemsList.map((menu: any, key: number) => (
                         <CommandGroup key={key}>

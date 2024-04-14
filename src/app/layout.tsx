@@ -18,14 +18,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex items-start justify-between bg-custom bg-fixed bg-cover relative`}>
-        <div className="hidden lg:flex min-w-[300px] border-r min-h-screen">
-          <Sidebar />
-        </div>
-        <main className="grid w-full h-full">
-          <Header />
-          {children}
-        </main>
+      <body className={`${inter.className}  bg-gradient-to-tr from-blue-100 to-pink-200 bg-fixed bg-cover relative`} >
+          <div className="flex items-start justify-between">
+            <div className="hidden lg:flex min-w-[300px]">
+              <Sidebar />
+            </div>
+            <main className="grid w-full h-full">
+              <Header />
+              {children}
+            </main>
+          </div>
       </body>
     </html>
   );
