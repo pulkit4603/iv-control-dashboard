@@ -15,10 +15,10 @@ export default function DurationInput({
     <div className="flex flex-col min-h-24 p-4 items-center justify-normal gap-4 rounded-2xl bg-white shadow-md">
       <div>
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            setDuration((e.target as HTMLInputElement).value);
-          }}
+          // onSubmit={(e) => {
+          //   e.preventDefault();
+          //   setDuration((e.target as HTMLInputElement).value);
+          // }}
           className="flex items-center justify-normal p-2 md:p-2 text-[1rem] text-gray-600 backdrop-brightness-110 rounded-md"
         >
           <Label className="p-2">Duration (minutes)</Label>
@@ -29,14 +29,14 @@ export default function DurationInput({
             value={duration}
             onChange={(e) => setDuration(e.target.value)}
           />
-          <Button
+          {/* <Button
             variant="ghost"
             size="icon"
             type="submit"
             className="w-8 h-8 p-2"
           >
             <Check size={16} />
-          </Button>
+          </Button> */}
         </form>
       </div>
     </div>
