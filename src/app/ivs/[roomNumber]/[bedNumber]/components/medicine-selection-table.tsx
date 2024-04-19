@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
 import {
   Form,
   FormControl,
@@ -8,14 +8,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
+} from '@/components/ui/form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
+} from '@/components/ui/select';
 
 export default function MedicineSelectionTable({
   setMedicineFormData,
@@ -26,13 +26,13 @@ export default function MedicineSelectionTable({
 
   return (
     <Form {...form}>
-      <form className="w-2/3 space-y-6">
+      <form className='w-2/3 space-y-6'>
         <FormField
           control={form.control}
-          name="medicine"
+          name='medicine'
           render={({ field }: { field: any }) => (
-            <FormItem className="min-w-44 min-h-28 p-4 rounded-2xl bg-white shadow-md">
-              <FormLabel className="font-semibold">Select Medicine</FormLabel>
+            <FormItem className='min-h-28 min-w-44 rounded-2xl bg-white p-4 shadow-md'>
+              <FormLabel className='font-semibold'>Select Medicine</FormLabel>
               <Select
                 onValueChange={(value) => {
                   field.onChange(value);
@@ -41,15 +41,15 @@ export default function MedicineSelectionTable({
                 defaultValue={field.value}
               >
                 <FormControl>
-                  <SelectTrigger className="min-w-fit shadow-sm">
-                    <SelectValue placeholder="Select medicine to be administered" />
+                  <SelectTrigger className='min-w-fit shadow-sm'>
+                    <SelectValue placeholder='Select medicine to be administered' />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="glucose">glucose</SelectItem>
-                  <SelectItem value="gentamicin">gentamicin</SelectItem>
-                  <SelectItem value="micafungin">micafungin</SelectItem>
-                  <SelectItem value="amphotericin">amphotericin</SelectItem>
+                  <SelectItem value='glucose'>glucose</SelectItem>
+                  <SelectItem value='gentamicin'>gentamicin</SelectItem>
+                  <SelectItem value='micafungin'>micafungin</SelectItem>
+                  <SelectItem value='amphotericin'>amphotericin</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />

@@ -1,15 +1,15 @@
-"use client";
-import { beds, Bed } from "@/constants/data";
+'use client';
+import { beds, Bed } from '@/constants/data';
 import {
   CustomBreadcrumb,
   CustomBreadcrumbItems,
-} from "@/components/custom-breadcrumb";
-import AboutPatientTile from "./components/about-patient-tile";
-import MedicineSelectionTable from "./components/medicine-selection-table";
-import FlowrateSelector from "./components/flowrate-selector";
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import DurationInput from "./components/duration-input";
+} from '@/components/custom-breadcrumb';
+import AboutPatientTile from './components/about-patient-tile';
+import MedicineSelectionTable from './components/medicine-selection-table';
+import FlowrateSelector from './components/flowrate-selector';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import DurationInput from './components/duration-input';
 // import DurationInput from "./components/duration-input";
 interface PageProps {
   params: {
@@ -51,7 +51,7 @@ export default function Page({ params }: PageProps) {
     parseInt(params.roomNumber)
   );
 
-  const breadcrumbItems: CustomBreadcrumbItems["items"] = {
+  const breadcrumbItems: CustomBreadcrumbItems['items'] = {
     fatherLink: `/ivs/${params.roomNumber}`,
     fatherName: `Room ${params.roomNumber}`,
     childName: `Bed ${params.bedNumber}`,
@@ -65,13 +65,13 @@ export default function Page({ params }: PageProps) {
     time: number
   ) {
     try {
-      console.log("Posting data...");
+      console.log('Posting data...');
       const response = await fetch(
-        "https://g374xrbf-5519.inc1.devtunnels.ms/motor",
+        'https://g374xrbf-5519.inc1.devtunnels.ms/motor',
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             option: option,
@@ -87,19 +87,19 @@ export default function Page({ params }: PageProps) {
       const data = await response.json();
       console.log(data);
     } catch (error) {
-      console.error("Failed to post data: ", error);
+      console.error('Failed to post data: ', error);
     }
   }
 
   async function postStop() {
     try {
-      console.log("Posting data...");
+      console.log('Posting data...');
       const response = await fetch(
-        "https://g374xrbf-5519.inc1.devtunnels.ms/motor/stop",
+        'https://g374xrbf-5519.inc1.devtunnels.ms/motor/stop',
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             room: params.roomNumber,
@@ -112,36 +112,36 @@ export default function Page({ params }: PageProps) {
       const data = await response.json();
       console.log(data);
     } catch (error) {
-      console.error("Failed to post data: ", error);
+      console.error('Failed to post data: ', error);
     }
   }
 
   return (
     <>
-      <div className="flex flex-col items-start justify-between p-4 md:p-4">
+      <div className='flex flex-col items-start justify-between p-4 md:p-4'>
         <CustomBreadcrumb items={breadcrumbItems} />
       </div>
-      <div className="flex flex-col items-start justify-start rounded-lg p-4 gap-4">
-        <div className="flex flex-grow items-center justify-between min-w-full p-2 rounded-3xl backdrop-brightness-110">
+      <div className='flex flex-col items-start justify-start gap-4 rounded-lg p-4'>
+        <div className='flex min-w-full flex-grow items-center justify-between rounded-3xl p-2 backdrop-brightness-110'>
           <AboutPatientTile />
         </div>
-        <div className="flex flex-grow items-center justify-start min-w-full p-2 gap-4 rounded-3xl backdrop-brightness-110">
-          <div className="p-4">
+        <div className='flex min-w-full flex-grow items-center justify-start gap-4 rounded-3xl p-2 backdrop-brightness-110'>
+          <div className='p-4'>
             <MedicineSelectionTable setMedicineFormData={setMedicineFormData} />
           </div>
-          <div className="p-4">
+          <div className='p-4'>
             <FlowrateSelector
               value={flowrateFormData}
               onValueChange={setFlowrateFormData}
             />
           </div>
-          <div className="p-4">
+          <div className='p-4'>
             <DurationInput
               duration={submittedDuration}
               setDuration={handleDurationSubmit}
             />
           </div>
-          <div className="flex min-h-24 p-4 items-center justify-end gap-4 rounded-2xl bg-white shadow-md">
+          <div className='flex min-h-24 items-center justify-end gap-4 rounded-2xl bg-white p-4 shadow-md'>
             {/* {medicineFormData && (
               <div className="p-4">
                 <p className="font-bold pb-2">Medicine:</p>{" "}
@@ -160,12 +160,12 @@ export default function Page({ params }: PageProps) {
                 {submittedDuration} minutes
               </div>
             )} */}
-            <div className="p-4">
-              <div className="p-2">
+            <div className='p-4'>
+              <div className='p-2'>
                 <Button
                   onClick={() =>
                     postPwm(
-                      "forward",
+                      'forward',
                       params.roomNumber,
                       54000 + (11535 / 160) * flowrateFormData[0],
                       Number(submittedDuration) * 60000
@@ -175,7 +175,7 @@ export default function Page({ params }: PageProps) {
                   START
                 </Button>
               </div>
-              <div className="p-2">
+              <div className='p-2'>
                 <Button onClick={() => postStop()}>STOP</Button>
               </div>
             </div>
