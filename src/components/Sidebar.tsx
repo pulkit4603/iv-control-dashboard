@@ -28,12 +28,12 @@ export default function Sidebar() {
         {
           name: 'All Beds',
           icon: <Bed />,
-          path: '/ivs',
+          path: '/dashboard/ivs',
         },
         {
           name: 'Connect New',
           icon: <Radio />,
-          path: '/ivs/add',
+          path: '/dashboard/ivs/add',
         },
       ],
     },
@@ -43,12 +43,12 @@ export default function Sidebar() {
         {
           name: 'All Patients',
           icon: <Hospital />,
-          path: '/patients',
+          path: '/dashboard/patients',
         },
         {
           name: 'Add New',
           icon: <UserPlus />,
-          path: '/patients/add',
+          path: '/dashboard/patients/add',
         },
       ],
     },
@@ -58,12 +58,12 @@ export default function Sidebar() {
         {
           name: 'All Appointments',
           icon: <CalendarCheck />,
-          path: '/appointments',
+          path: '/dashboard/appointments',
         },
         {
           name: 'Create New',
           icon: <CalendarPlus />,
-          path: '/appointments/add',
+          path: '/dashboard/appointments/add',
         },
       ],
     },
@@ -75,7 +75,7 @@ export default function Sidebar() {
         {
           name: 'Notifications',
           icon: <Bell size={20} strokeWidth={1} />,
-          path: '/notifications',
+          path: '/dashboard/notifications',
         },
         {
           name: 'Settings',
@@ -85,7 +85,7 @@ export default function Sidebar() {
         {
           name: 'Logout',
           icon: <LogOut size={20} strokeWidth={1} />,
-          path: '/logout',
+          path: '/dashboard/logout',
         },
       ],
     },

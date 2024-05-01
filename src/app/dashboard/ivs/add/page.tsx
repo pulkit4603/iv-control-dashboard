@@ -3,7 +3,7 @@
 import { CustomBreadcrumb } from '@/components/custom-breadcrumb';
 
 const breadcrumbItems = {
-  fatherLink: '/ivs',
+  fatherLink: '/dashboard/ivs',
   fatherName: 'Beds',
   childName: 'Connect New',
 };

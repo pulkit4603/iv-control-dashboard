@@ -10,7 +10,7 @@ export default function Page({ params }: { params: { roomNumber: number } }) {
     (bed) => bed.roomNumber === Number(params.roomNumber)
   );
   const breadcrumbItems = {
-    fatherLink: '/ivs',
+    fatherLink: '/dashboard/ivs',
     fatherName: 'Beds',
     childName: `Room ${params.roomNumber}`,
   };

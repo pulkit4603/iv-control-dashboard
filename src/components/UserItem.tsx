@@ -9,7 +9,7 @@ export default function UserItem() {
       <div className='avatar flex min-h-12 min-w-12 items-center justify-center rounded-full border border-neutral-400 bg-teal-500 font-[700] text-white'>
         <p>PD</p>
       </div>
-      <Link href='/profile'>
+      <Link href='/dashboard/profile'>
         <Button variant='link' size='sm'>
           <div className='grow'>
             <p className='truncate text-[16px] font-bold'>Pulkit Dwivedi</p>

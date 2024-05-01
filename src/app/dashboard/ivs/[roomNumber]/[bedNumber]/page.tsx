@@ -52,7 +52,7 @@ export default function Page({ params }: PageProps) {
   );
 
   const breadcrumbItems: CustomBreadcrumbItems['items'] = {
-    fatherLink: `/ivs/${params.roomNumber}`,
+    fatherLink: `/dashboard/ivs/${params.roomNumber}`,
     fatherName: `Room ${params.roomNumber}`,
     childName: `Bed ${params.bedNumber}`,
   };

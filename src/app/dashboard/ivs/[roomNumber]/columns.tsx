@@ -30,7 +30,11 @@ export const columns: ColumnDef<Bed>[] = [
     cell: ({ row }: CellProps) => {
       const bedNumber = row.original.bedNumber;
       const roomNumber = row.original.roomNumber;
-      return <Link href={`/ivs/${roomNumber}/${bedNumber}`}>{bedNumber}</Link>;
+      return (
+        <Link href={`/dashboard/ivs/${roomNumber}/${bedNumber}`}>
+          {bedNumber}
+        </Link>
+      );
     },
   },
   {
@@ -46,7 +50,7 @@ export const columns: ColumnDef<Bed>[] = [
     header: 'Room Number',
     cell: ({ cell, getValue }: RoomCellProps) => {
       const value = getValue();
-      return <Link href={`/ivs/${value}`}>{value}</Link>;
+      return <Link href={`/dashboard/ivs/${value}`}>{value}</Link>;
     },
   },
   {
