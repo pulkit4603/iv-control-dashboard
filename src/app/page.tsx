@@ -16,15 +16,6 @@ export default async function Page() {
         <br />
         <button type='submit'>Login</button>
       </form>
-      <form
-        action={async () => {
-          'use server';
-          await logout();
-          redirect('/');
-        }}
-      >
-        <button type='submit'>Logout</button>
-      </form>
       <pre>{JSON.stringify(session, null, 2)}</pre>
     </section>
   );

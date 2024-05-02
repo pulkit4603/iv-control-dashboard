@@ -84,9 +84,9 @@ export function getUniqueRoomNumbers(beds: Bed[]): number[] {
 export const rooms = getUniqueRoomNumbers(beds);
 
 export const pagePaths = {
-  homePage: '/',
-  activeIvsPage: '/ivs/active',
-  logoutPage: '/logout',
-  profilePage: '/profile',
-  settingsPage: '/settings',
+  homePage: '/dashboard',
+  activeIvsPage: '/dashboard/ivs/active',
+  logoutPage: '/dashboard/logout',
+  profilePage: '/dashboard/profile',
+  settingsPage: '/dashboard/settings',
 };
