@@ -11,7 +11,7 @@ export default function RoomNumberInput() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    router.push(`/ivs/${roomNumber}`);
+    router.push(`/dashboard/ivs/${roomNumber}`);
   };
 
   return (

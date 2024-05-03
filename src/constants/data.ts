@@ -8,72 +8,31 @@ export type Bed = {
 
 export const beds: Bed[] = [
   {
-    bedNumber: 1,
+    patientName: 'Pulkit Dwivedi',
     patientId: 'N101',
-    patientName: 'Candice Schiner',
     roomNumber: 306,
-    status: 'Active',
+    bedNumber: 1,
+    status: 'Inactive'
   },
   {
-    bedNumber: 2,
-    patientId: 'N102',
-    patientName: 'John Doe',
+    patientName: 'Pulkit Gupta',
     roomNumber: 301,
-    status: 'Active',
-  },
-  {
-    bedNumber: 3,
-    patientId: 'N103',
-    patientName: 'Alice Johnson',
-    roomNumber: 306,
-    status: 'Active',
-  },
-  {
-    bedNumber: 4,
-    patientId: 'N104',
-    patientName: 'David Smith',
-    roomNumber: 301,
-    status: 'Inactive',
-  },
-  {
-    bedNumber: 5,
-    patientId: 'N105',
-    patientName: 'Emma Wilson',
-    roomNumber: 306,
-    status: 'Active',
-  },
-  {
-    bedNumber: 6,
-    patientId: 'N106',
-    patientName: 'James Brown',
-    roomNumber: 304,
-    status: 'Active',
-  },
-  {
-    bedNumber: 7,
-    patientId: 'N107',
-    patientName: 'Laura White',
-    roomNumber: 305,
-    status: 'Active',
-  },
-  {
-    bedNumber: 8,
-    patientId: 'N108',
-    patientName: 'Michael Lee',
-    roomNumber: 304,
-    status: 'Active',
-  },
+    patientId: 'N117',
+    bedNumber: 17,
+    status: 'Inactive'
+  }
 ];
-for (let i = 9; i <= 48; i++) {
-  const bed: Bed = {
-    bedNumber: i,
-    patientId: `N10${i}`,
-    patientName: `Patient ${i}`,
-    roomNumber: i % 8 === 0 ? 8 : i % 8,
-    status: i % 2 === 0 ? 'Active' : 'Inactive',
-  };
-  beds.push(bed);
-}
+
+// for (let i = 9; i <= 48; i++) {
+//   const bed: Bed = {
+//     bedNumber: i,
+//     patientId: `N10${i}`,
+//     patientName: `Patient ${i}`,
+//     roomNumber: i % 8 === 0 ? 8 : i % 8,
+//     status: i % 2 === 0 ? 'Active' : 'Inactive',
+//   };
+//   beds.push(bed);
+// }
 
 export function getUniqueRoomNumbers(beds: Bed[]): number[] {
   return beds

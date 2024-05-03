@@ -10,6 +10,7 @@ import FlowrateSelector from './components/flowrate-selector';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import DurationInput from './components/duration-input';
+import { useToast } from '@/components/ui/use-toast';
 // import DurationInput from "./components/duration-input";
 interface PageProps {
   params: {
@@ -33,6 +34,7 @@ function getBedByNumberAndRoom(
 }
 
 export default function Page({ params }: PageProps) {
+  const { toast } = useToast();
   const [medicineFormData, setMedicineFormData] =
     useState<MedicineFormData | null>(null);
 
@@ -115,7 +117,7 @@ export default function Page({ params }: PageProps) {
       console.error('Failed to post data: ', error);
     }
   }
-
+  const [isIVActive, setIsIVActive] = useState(false);
   return (
     <>
       <div className='flex flex-col items-start justify-between p-4 md:p-4'>
@@ -163,14 +165,37 @@ export default function Page({ params }: PageProps) {
             <div className='p-4'>
               <div className='p-2'>
                 <Button
-                  onClick={() =>
-                    postPwm(
-                      'forward',
-                      params.roomNumber,
-                      54000 + (11535 / 160) * flowrateFormData[0],
-                      Number(submittedDuration) * 60000
-                    )
-                  }
+                  onClick={() => {
+                    console.log(
+                      `isactiveiv: ${isIVActive}, setdur: ${submittedDuration}`
+                    );
+                    if (!isIVActive) {
+                      setIsIVActive(true);
+                      console.log(`in if block: isiv: ${isIVActive}`);
+                      postPwm(
+                        'forward',
+                        params.roomNumber,
+                        54000 + (11535 / 160) * flowrateFormData[0],
+                        Number(submittedDuration) * 60000
+                      );
+                      toast({
+                        title: 'IV Administration Started',
+                        description: `For ${Number(submittedDuration) * 60} seconds`,
+                      });
+                      setTimeout(() => {
+                        setIsIVActive(false);
+                        console.log('TIMEOUT OVER');
+                      }, submittedDuration! * 60000);
+
+                      console.log('IV Active: ', isIVActive);
+                    } else {
+                      console.log('Here in else');
+                      toast({
+                        title: 'IV Administration Failed',
+                        description: `IV is currently active`,
+                      });
+                    }
+                  }}
                 >
                   START
                 </Button>
