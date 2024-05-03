@@ -201,7 +201,25 @@ export default function Page({ params }: PageProps) {
                 </Button>
               </div>
               <div className='p-2'>
-                <Button onClick={() => postStop()}>STOP</Button>
+                <Button
+                  onClick={() => {
+                    if (isIVActive) {
+                      postStop();
+                      setIsIVActive(false);
+                      toast({
+                        title: 'IV Administration Stopped',
+                        description: `IV has been stopped`,
+                      });
+                    } else {
+                      toast({
+                        title: 'Cannot Stop Administering IV',
+                        description: `IV is currently inactive`,
+                      });
+                    }
+                  }}
+                >
+                  STOP
+                </Button>
               </div>
             </div>
           </div>
