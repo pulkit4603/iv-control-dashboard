@@ -21,7 +21,7 @@ export default function AboutPatientTile() {
           <div className='rounded-3xl p-2'>
             <h2 className='text-md font-bold'>About Patient</h2>
             <p className='mb-4 text-sm'>
-              Excessive rizz syndrome, dementia to womens phone numbers, erectile dysfunction, brain humor. Admitted for mild fever.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim molestiae suscipit atque hic, perferendis aut vel, reprehenderit, pariatur distinctio quaerat sapiente veritatis quasi repellendus consequatur modi! Quam corporis similique tempora.
               {/* MAKE RESPONSIVE */}
             </p>
           </div>
