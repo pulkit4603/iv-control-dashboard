@@ -69,7 +69,8 @@ export default function Page({ params }: PageProps) {
     try {
       console.log('Posting data...');
       const response = await fetch(
-        'https://g374xrbf-5519.inc1.devtunnels.ms/motor',
+        // 'https://g374xrbf-5519.inc1.devtunnels.ms/motor',
+        'https://9rfjq5dz-5519.inc1.devtunnels.ms/motor',
         {
           method: 'POST',
           headers: {
@@ -97,7 +98,8 @@ export default function Page({ params }: PageProps) {
     try {
       console.log('Posting data...');
       const response = await fetch(
-        'https://g374xrbf-5519.inc1.devtunnels.ms/motor/stop',
+        // 'https://g374xrbf-5519.inc1.devtunnels.ms/motor/stop',
+        'https://9rfjq5dz-5519.inc1.devtunnels.ms/motor/stop',
         {
           method: 'POST',
           headers: {
