@@ -21,10 +21,7 @@ export default function AboutPatientTile() {
           <div className='rounded-3xl p-2'>
             <h2 className='text-md font-bold'>About Patient</h2>
             <p className='mb-4 text-sm'>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos modi
-              magnam cum laborum reiciendis voluptatum assumenda illo quaerat
-              numquam nobis quibusdam animi perspiciatis, deserunt sed, omnis
-              aut? Delectus, maxime sint.
+              Excessive rizz syndrome, dementia to womens phone numbers, erectile dysfunction, brain humor. Admitted for mild fever.
               {/* MAKE RESPONSIVE */}
             </p>
           </div>
@@ -32,7 +29,7 @@ export default function AboutPatientTile() {
             <div>
               <h3 className='text-sm font-bold'>Patient Name</h3>
               <p className='text-sm'>
-                John Doe
+                Pulkit Gupta
                 {/* MAKE RESPONSIVE */}
               </p>
             </div>
@@ -40,7 +37,7 @@ export default function AboutPatientTile() {
             <div>
               <h3 className='text-sm font-bold'>Phone Number</h3>
               <p className='text-sm'>
-                +91 234 567 8901
+                +91 8879999999
                 {/* MAKE RESPONSIVE */}
               </p>
             </div>
@@ -48,7 +45,7 @@ export default function AboutPatientTile() {
             <div>
               <h3 className='text-sm font-bold'>Address</h3>
               <p className='text-sm'>
-                123 Main St, Anytown, USA
+                703, Antilia, Billionaires Row, Mumbai
                 {/* MAKE RESPONSIVE */}
               </p>
             </div>
